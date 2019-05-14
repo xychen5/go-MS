@@ -81,6 +81,22 @@
     </div>
   </header>
   <footer>
+
+  <form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+      <p id="test-error" style="color:red"></p>
+      <p>
+          用户名: <input type="text" id="username" name="username">
+      </p>
+      <p>
+          口  令: <input type="password" id="password" name="password">
+      </p>
+      <p>
+          重复口令: <input type="password" id="password-2">
+      </p>
+      <p>
+          <button type="submit">提交</button> <button type="reset">重置</button>
+      </p>
+  </form>
     <div class="author">
       Official website:
       <a href="http://{{.Website}}">{{.Website}}</a> /
@@ -89,6 +105,33 @@
     </div>
   </footer>
   <div class="backdrop"></div>
+
+
+  <script>
+     var checkRegisterForm = function () {
+         var userCh = /[0-9a-zA-Z]{3,10}/;
+         var passCh = /[0-9a-zA-Z\_\$]{6,20}/;
+         var inputU = document.getElementById("username");
+         var inputP = document.getElementById("password");
+         var inputP2 = document.getElementById("password-2");
+         if(!userCh.test(inputU.value))
+         {
+             alert("no ok username");
+             return false;
+         }
+         if(!passCh.test(inputP.value))
+         {
+             alert("no ok password");
+             return false;
+         }
+         //if(inputP.value !== inputP2.value) retunr false;
+
+         // TODO: var userCh = /[0-9a-zA-Z]{3,10}/;
+         return true;
+     }
+
+  </script>
+
 
   <script src="/static/js/reload.min.js"></script>
 </body>
