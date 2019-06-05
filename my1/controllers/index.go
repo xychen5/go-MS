@@ -25,11 +25,13 @@ func (c *MainController) MyPost() {
 	//	return
 	//}
 	username := c.GetString("username")
-	fmt.Println("mypost show :" + username)
+	fmt.Println("mypost show :" + username + "idtype is"+idType)
 	if idType == "i am teacher" {
 		c.Redirect("/teacher?username="+username, 302)
-	}else {
+	}else if idType == "i am student"{
 		c.Redirect("/stu?username="+ username,302)
+	}else {
+		c.Redirect("/dba?username="+ username,302)
 	}
 	return
 }
