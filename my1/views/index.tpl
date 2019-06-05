@@ -74,6 +74,8 @@
     </style>
 </head>
 
+
+
 <body>
   <header>
     <h1 class="logo">Welcome to Grade Manage System</h1>
@@ -88,6 +90,7 @@
           <select name="idChooser">
               <option value="i am teacher">i am teacher</option>
               <option value="i am student">i am student</option>
+              <option value="i am dba">i am dba</option>
           </select>
       </p>
       <p>
@@ -96,11 +99,6 @@
       <p>
           User Pass: <input type="password" id="password" name="password">
       </p>
-   <!--
-      <p>
-          重复口令: <input type="password" id="password2">
-      </p>
-   -->
       <p>
           <button type="submit">enter</button> <button type="reset">reset</button>
       </p>
@@ -110,11 +108,9 @@
     </div>
   </footer>
   <div class="backdrop"></div>
-
-
   <script>
      var checkRegisterForm = function () {
-         var userCh = /[0-9a-zA-Z]{3,10}/;
+         var userCh = /[0-9a-zA-Z]{1,10}/;
          var passCh = /[0-9a-zA-Z\_\$]{1,20}/;
          var inputU = document.getElementById("username");
          var inputP = document.getElementById("password");
